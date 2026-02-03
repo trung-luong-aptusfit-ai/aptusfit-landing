@@ -8,7 +8,7 @@ import react from "@astrojs/react";
 // Set this to your final domain so sitemap + canonical URLs are correct.
 // You can override it in CI via PUBLIC_SITE.
 export default defineConfig({
-  site: process.env.PUBLIC_SITE ?? "https://www.aptusfit.app",
+  site: process.env.PUBLIC_SITE ?? "https://www.aptusfit.ai",
   alias: {
     "@": "./src",
   },
