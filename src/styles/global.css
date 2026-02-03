@@ -1,0 +1,441 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Centralized color variables using Tailwind theme */
+@layer base {
+  :root {
+    /* Brand Colors (Electric Blue) */
+    --color-brand-50: 230 244 255;
+    /* #e6f4ff */
+    --color-brand-100: 179 224 255;
+    /* #b3e0ff */
+    --color-brand-200: 128 204 255;
+    /* #80ccff */
+    --color-brand-300: 77 184 255;
+    /* #4db8ff */
+    --color-brand-400: 26 163 255;
+    /* #1aa3ff */
+    --color-brand-500: 0 150 255;
+    /* #0096ff */
+    --color-brand-600: 0 120 204;
+    /* #0078cc */
+    --color-brand-700: 0 90 153;
+    /* #005a99 */
+    --color-brand-800: 0 60 102;
+    /* #003c66 */
+    --color-brand-900: 0 30 51;
+    /* #001e33 */
+    --color-brand-950: 0 15 26;
+    /* #000f1a */
+
+    /* Neutral Scale (iOS System Grays) */
+    --color-neutral-50: 242 242 247;
+    /* #f2f2f7 */
+    --color-neutral-100: 229 229 234;
+    /* #e5e5ea */
+    --color-neutral-200: 209 209 214;
+    /* #d1d1d6 */
+    --color-neutral-300: 199 199 204;
+    /* #c7c7cc */
+    --color-neutral-400: 174 174 178;
+    /* #aeaeb2 */
+    --color-neutral-500: 142 142 147;
+    /* #8e8e93 */
+    --color-neutral-600: 99 99 102;
+    /* #636366 */
+    --color-neutral-700: 72 72 74;
+    /* #48484a */
+    --color-neutral-800: 58 58 60;
+    /* #3a3a3c */
+    --color-neutral-900: 44 44 46;
+    /* #2c2c2e */
+    --color-neutral-950: 28 28 30;
+    /* #1c1c1e */
+    --color-neutral-1000: 14 14 14;
+    /* #0e0e0e */
+
+    /* Success Colors (iOS Green) */
+    --color-success-50: 236 253 243;
+    --color-success-100: 209 250 229;
+    /* #d1fae5 */
+    --color-success-200: 167 243 208;
+    /* #a7f3d0 */
+    --color-success-300: 110 231 183;
+    /* #6ee7b7 */
+    --color-success-400: 52 211 153;
+    /* #34d399 */
+    --color-success-500: 52 199 89;
+    /* #34c759 */
+    --color-success-600: 34 169 77;
+    /* #22a94d */
+    --color-success-700: 21 128 61;
+    /* #15803d */
+    --color-success-800: 22 101 52;
+    /* #166534 */
+    --color-success-900: 20 83 45;
+    /* #14532d */
+
+    /* Warning Colors (Amber) */
+    --color-warning-50: 255 253 231;
+    --color-warning-100: 255 249 196;
+    /* #fff9c4 */
+    --color-warning-200: 255 245 157;
+    /* #fff59d */
+    --color-warning-300: 255 241 118;
+    /* #fff176 */
+    --color-warning-400: 255 238 88;
+    /* #ffee58 */
+    --color-warning-500: 255 213 79;
+    /* #ffd54f - adjusted to match spec primary */
+    --color-warning-600: 255 202 40;
+    /* #ffca28 */
+    --color-warning-700: 255 179 0;
+    /* #ffb300 */
+    --color-warning-800: 255 143 0;
+    /* #ff8f00 */
+    --color-warning-900: 255 111 0;
+    /* #ff6f00 */
+
+    /* Error Colors (iOS Red) */
+    --color-error-50: 254 242 242;
+    --color-error-100: 254 226 226;
+    --color-error-200: 254 202 202;
+    /* #fecaca */
+    --color-error-300: 252 165 165;
+    /* #fca5a5 */
+    --color-error-400: 248 113 113;
+    /* #f87171 */
+    --color-error-500: 255 59 48;
+    /* #ff3b30 */
+    --color-error-600: 220 38 38;
+    /* #dc2626 */
+    --color-error-700: 185 28 28;
+    /* #b91c1c */
+    --color-error-800: 153 27 27;
+    /* #991b1b */
+    --color-error-900: 127 29 29;
+    /* #7f1d1d */
+
+    /* Pastel Colors */
+    --color-pastel-blue: 230 244 255;
+    /* #e6f4ff */
+    --color-pastel-green: 216 232 201;
+    /* #d8e8c9 */
+    --color-pastel-orange: 255 224 201;
+    /* #ffe0c9 */
+    --color-pastel-purple: 238 214 255;
+    /* #eed6ff */
+    --color-pastel-red: 255 214 214;
+    /* #ffd6d6 */
+    --color-pastel-yellow: 255 249 196;
+    /* #fff9c4 */
+
+    /* Semantic Colors - Light Mode (Default) */
+    --background: var(--color-neutral-50);
+    --foreground: var(--color-neutral-950);
+    --surface: var(--color-neutral-50);
+    --surface-secondary: var(--color-neutral-100);
+    --surface-foreground: var(--color-neutral-950);
+
+    --overlay: 255 255 255;
+    --overlay-foreground: var(--color-neutral-950);
+
+    --accent: var(--color-brand-500);
+    --accent-foreground: 255 255 255;
+    --accent-hover: var(--color-brand-600);
+
+    --semantic-success: var(--color-success-500);
+    --semantic-success-foreground: 255 255 255;
+    --semantic-warning: var(--color-warning-500);
+    --semantic-warning-foreground: var(--color-neutral-950);
+    --semantic-error: var(--color-error-500);
+    --semantic-error-foreground: 255 255 255;
+
+    --muted: var(--color-neutral-100);
+    --muted-foreground: var(--color-neutral-600);
+
+    --border: var(--color-neutral-200);
+    --divider: var(--color-neutral-300);
+
+    --input: var(--color-neutral-200);
+    --card: 255 255 255;
+    --card-foreground: var(--color-neutral-950);
+
+    --radius-card: 20px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+    --radius-pill: 9999px;
+
+    /* Button Text Colors */
+    --color-button-primary-text: 255 255 255;
+    --color-button-secondary-text: 44 44 46;
+    /* #2c2c2e */
+    --color-button-ghost-text: 72 72 74;
+    /* #48484a */
+    --color-button-danger-text: 255 59 48;
+    /* #ff3b30 */
+    --color-button-pastel-text: 44 44 46;
+    /* #2c2c2e */
+
+    /* Tab Bar */
+    --color-tab-bar-background: 255 255 255;
+    /* oklch(100%...) */
+    --color-tab-bar-border: 229 229 234;
+    /* #e5e5ea */
+    --color-tab-bar-indicator: 229 229 234;
+    /* #e5e5ea */
+    --color-tab-bar-active: 28 28 30;
+    /* #1c1c1e */
+    --color-tab-bar-inactive: 99 99 102;
+    /* #636366 */
+
+    /* Coach Button Gradient */
+    --color-brand-gradient-start: 26 163 255;
+    /* #1aa3ff */
+    --color-brand-gradient-end: 0 120 204;
+    /* #0078cc */
+  }
+
+  /* Semantic Colors - Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: var(--color-neutral-1000);
+      --foreground: 255 255 255;
+      --surface: var(--color-neutral-900);
+      --surface-secondary: var(--color-neutral-800);
+      --surface-foreground: 255 255 255;
+
+      --overlay: var(--color-neutral-800);
+      --overlay-foreground: 255 255 255;
+
+      --accent: 51 170 255;
+      /* #33aaff */
+      --accent-foreground: 255 255 255;
+      --accent-hover: 102 194 255;
+      /* #66c2ff */
+
+      --semantic-success: 48 209 88;
+      /* #30d158 */
+      --semantic-success-foreground: var(--color-neutral-950);
+      --semantic-warning: 255 159 10;
+      /* #ff9f0a */
+      --semantic-warning-foreground: var(--color-neutral-950);
+      --semantic-error: 255 69 58;
+      /* #ff453a */
+      --semantic-error-foreground: 255 255 255;
+
+      --muted: var(--color-neutral-800);
+      --muted-foreground: var(--color-neutral-100);
+
+      --border: var(--color-neutral-800);
+      --divider: var(--color-neutral-700);
+
+      --input: var(--color-neutral-800);
+      --card: var(--color-neutral-950);
+      --card-foreground: 255 255 255;
+
+      --color-pastel-blue: 30 58 95;
+      /* #1e3a5f */
+      --color-pastel-orange: 95 58 30;
+      /* #5f3a1e */
+      --color-pastel-purple: 74 45 95;
+      /* #4a2d5f */
+      --color-pastel-green: 45 74 45;
+      /* #2d4a2d */
+      --color-pastel-red: 95 45 45;
+      /* #5f2d2d */
+      --color-pastel-yellow: 95 95 30;
+      /* #5f5f1e */
+
+      /* Button Text Colors - Dark Mode */
+      --color-button-primary-text: 44 44 46;
+      /* #2c2c2e */
+      --color-button-secondary-text: 255 255 255;
+      --color-button-ghost-text: 174 174 178;
+      /* #aeaeb2 */
+      --color-button-danger-text: 255 59 48;
+      /* #ff3b30 */
+      --color-button-pastel-text: 44 44 46;
+      /* #2c2c2e */
+
+      /* Tab Bar - Dark Mode */
+      --color-tab-bar-background: 28 29 29;
+      /* Approx from oklch */
+      --color-tab-bar-border: 58 58 60;
+      /* #3a3a3c */
+      --color-tab-bar-indicator: 58 58 60;
+      /* #3a3a3c */
+      --color-tab-bar-active: 255 255 255;
+      --color-tab-bar-inactive: 174 174 178;
+      /* #aeaeb2 */
+
+      /* Coach Button Gradient - Dark Mode */
+      --color-brand-gradient-start: 77 184 255;
+      /* #4db8ff */
+      --color-brand-gradient-end: 0 150 255;
+      /* #0096ff */
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+}
+
+@layer base {
+
+  /* Headings: consistent sizing, tighter leading, balanced margins */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold leading-tight;
+  }
+
+  h1 {
+    @apply text-5xl font-extrabold leading-tight mt-10 mb-4;
+  }
+
+  h2 {
+    @apply text-4xl font-bold leading-tight mt-8 mb-3;
+  }
+
+  h3 {
+    @apply text-xl font-bold leading-snug mt-6 mb-2;
+  }
+
+  /* Paragraphs: standard readable rhythm */
+  p {
+    @apply leading-relaxed mb-4;
+  }
+
+  /* Lists: moderate spacing consistent with paragraphs */
+  ul {
+    @apply list-disc list-inside my-4;
+  }
+
+  li {
+    @apply my-1;
+  }
+
+  /* Media + links */
+  img {
+    @apply rounded-lg;
+  }
+
+  a {
+    @apply text-black underline;
+  }
+
+  /* Remove extra top margin for the first element in content areas */
+  main> :first-child,
+  .prose> :first-child {
+    @apply mt-0;
+  }
+
+  /* Ordered lists */
+  ol {
+    @apply list-decimal list-inside my-4;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Enhanced animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 150, 255, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 20px 10px rgba(0, 150, 255, 0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Glass morphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Mobile touch optimizations */
+@media (max-width: 768px) {
+
+  /* Larger touch targets */
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Reduce animation complexity on mobile */
+  @media (prefers-reduced-motion: no-preference) {
+    * {
+      animation-duration: 0.5s !important;
+    }
+  }
+
+  /* Full-width CTA on mobile */
+  .mobile-full-cta {
+    width: 100%;
+  }
+}
+
+/* Performance optimization */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}

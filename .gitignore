@@ -1,0 +1,18 @@
+node_modules
+.astro
+dist
+.DS_Store
+*.log
+todo-website.md
+generated/
+settings.local.json
+
+# Agent instruction files
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+
+.claude/*
+
+# Ignore all dot-folders
+.*/
