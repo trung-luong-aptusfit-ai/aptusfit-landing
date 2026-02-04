@@ -21,7 +21,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
                         <img
                             src="/aptusfit-logo.png"
                             alt="AptusFIT Logo"
-                            className="h-12 md:h-16 w-auto"
+                            className="h-24 md:h-44 w-auto rounded-2xl shadow-lg bg-surface/50"
                         />
                     </motion.div>
 
@@ -68,6 +68,17 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
                             Coming Soon
                         </div>
                     </motion.div>
+
+                    {/* Development Statement */}
+                    <motion.p
+                        custom={2.5}
+                        initial="hidden"
+                        animate="visible"
+                        variants={fadeUpVariants}
+                        className="mt-6 text-sm md:text-base text-muted-foreground italic"
+                    >
+                        Platform is currently under development with a public release target of 2H2026
+                    </motion.p>
 
                     {/* App Showcase */}
                     <AppShowcase />
