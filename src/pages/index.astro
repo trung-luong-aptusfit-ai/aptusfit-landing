@@ -1,6 +1,84 @@
 ---
 import Base from "@/layouts/Base.astro";
-import HeroSection from "@/components/HeroSection";
+import Spotlight from "@/components/landing/Spotlight.astro";
+
+const contactHref = "mailto:contact@aptusfit.ai?subject=AptusFIT%20%E2%80%94%20Get%20in%20touch";
+
+const valueStrip = [
+  {
+    title: "Adaptive programming",
+    description: "Plans that recalibrate around your real performance, schedule, and recovery.",
+    icon: "M4 12a8 8 0 0 1 13.7-5.6L20 8 M20 4v4h-4 M20 12a8 8 0 0 1-13.7 5.6L4 16 M4 20v-4h4",
+  },
+  {
+    title: "Real-session tracking",
+    description: "Log sets, reps, and rest as you go — with timers built for how you actually lift.",
+    icon: "M5 20V10M12 20V4M19 20v-7",
+  },
+  {
+    title: "Coaching on demand",
+    description: "An AI coach that builds and adjusts workouts whenever life changes the plan.",
+    icon: "M4 5h16v11H8l-4 4V5z",
+  },
+];
+
+const detailsGrid = [
+  {
+    title: "Intelligent swaps",
+    description: "Smart alternatives based on your equipment, structure, and goals — no cable machine, no problem.",
+    image: "/media/landing/screen-4.png",
+    alt: "Exercise swap suggestions",
+  },
+  {
+    title: "Train anywhere",
+    description: "Multiple gym profiles adapt every workout to the equipment you actually have on hand.",
+    image: "/media/landing/screen-6.png",
+    alt: "Gym profile management",
+  },
+  {
+    title: "Long-term progress",
+    description: "Stay consistent with progress tracking, streaks, and training insights that compound.",
+    image: "/media/landing/screen-7.png",
+    alt: "Progress tracking dashboard",
+  },
+];
+
+const howItWorks = [
+  {
+    step: "01",
+    title: "Set your baseline",
+    description: "Tell us your goals, experience, and the equipment in each of your gyms.",
+  },
+  {
+    step: "02",
+    title: "Train and log",
+    description: "Follow your structured plan and track each session set-by-set as you go.",
+  },
+  {
+    step: "03",
+    title: "Let it adjust",
+    description: "Your plan recalibrates from real data — progressing you at exactly the right pace.",
+  },
+];
+
+const faqs = [
+  {
+    q: "What does “adaptive” actually mean?",
+    a: "AptusFIT reads your real workout data — loads, reps, completed sessions — and adjusts your upcoming plan so progression matches how you’re actually training, not a fixed template.",
+  },
+  {
+    q: "When can I use it?",
+    a: "The platform is in active development with a public release targeted for the second half of 2026. Get in touch and we’ll give you early access first.",
+  },
+  {
+    q: "Do I need a full gym?",
+    a: "No. Set up multiple gym profiles — commercial, home, hotel — and AptusFIT adapts every workout and suggests swaps for the equipment you have.",
+  },
+  {
+    q: "Will my Apple Health data sync?",
+    a: "Yes. AptusFIT integrates with Apple Health for active energy and activity, feeding richer signals into your adaptive plan.",
+  },
+];
 ---
 
 <Base
@@ -8,31 +86,205 @@ import HeroSection from "@/components/HeroSection";
   description="AptusFIT is a training system that adapts as you do. It uses your real workout data to adjust your plan over time, so you don't have to constantly rethink what to do next. No noise, no hype; just steady, long term progress!"
   isLandingPage={true}
 >
-  <meta slot="head" name="theme-color" content="#0096ff" />
+  <link slot="head" rel="preconnect" href="https://fonts.googleapis.com" />
+  <link slot="head" rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link slot="head" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <meta slot="head" name="theme-color" content="#08090B" />
 
-  <div class="min-h-screen flex flex-col">
-    <!-- Hero Section with Animations -->
-    <HeroSection client:load />
+  <div class="relative min-h-screen bg-[#08090B] text-[#F4F5F7] [font-family:'Urbanist',sans-serif] overflow-x-hidden [-webkit-font-smoothing:antialiased]">
 
-    <!-- Footer -->
-    <footer class="py-10 mt-auto border-t border-border bg-background">
-      <div class="max-w-[1200px] mx-auto px-5">
-        <div class="flex flex-col items-center gap-4">
-          <p class="text-sm m-0">
-            <a href="mailto:Contact@AptusFIT.ai" class="text-accent hover:text-accent/80 transition-colors underline font-medium">
-              Contact Us
-            </a>
-          </p>
-          <div class="flex items-center gap-4 text-sm text-muted-foreground">
-            <a href="/policy" class="hover:text-foreground transition-colors">Privacy Policy</a>
-            <span>·</span>
-            <a href="/terms" class="hover:text-foreground transition-colors">Terms of Service</a>
+    <!-- ===== NAV ===== -->
+    <nav class="sticky top-0 z-50 flex items-center justify-between px-8 py-[18px] backdrop-blur-md bg-[#08090B]/72 border-b border-white/[0.06]">
+      <a href="#top" class="flex items-center gap-2.5">
+        <img src="/media/landing/app-icon.png" alt="AptusFIT" class="w-8 h-8 rounded-[9px] block [box-shadow:0_0_22px_rgba(30,59,95,0.4)]" />
+        <span class="font-extrabold text-xl tracking-[-0.01em]"><span class="text-[#F4F5F7]">Aptus</span><span class="text-[#1E3B5F]">FIT</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-[30px]">
+        <a href="#features" class="text-[#9BA0A8] font-semibold text-[15px] hover:text-[#F4F5F7] transition-colors">Features</a>
+        <a href="#how" class="text-[#9BA0A8] font-semibold text-[15px] hover:text-[#F4F5F7] transition-colors">How it works</a>
+        <a href="#faq" class="text-[#9BA0A8] font-semibold text-[15px] hover:text-[#F4F5F7] transition-colors">FAQ</a>
+        <a href={contactHref} class="inline-flex items-center gap-2 bg-[#1E3B5F] text-white font-bold text-[15px] px-5 py-[11px] rounded-full hover:bg-[#254875] transition-colors">Get in touch</a>
+      </div>
+      <a href={contactHref} class="md:hidden inline-flex items-center gap-2 bg-[#1E3B5F] text-white font-bold text-sm px-4 py-2 rounded-full">Get in touch</a>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header id="top" class="relative z-[1]">
+      <div class="absolute -top-[120px] left-[8%] w-[520px] h-[520px] rounded-full bg-[radial-gradient(circle,rgba(30,59,95,0.20),transparent_68%)] blur-[20px] pointer-events-none"></div>
+      <div class="max-w-[1200px] mx-auto px-8 pt-20 pb-10 grid gap-12 items-center [grid-template-columns:repeat(auto-fit,minmax(360px,1fr))]">
+
+        <div class="min-w-0">
+          <div class="inline-flex items-center gap-[9px] px-[14px] py-[7px] border border-[#1E3B5F]/35 bg-[#1E3B5F]/10 rounded-full mb-[26px]">
+            <span class="w-[7px] h-[7px] rounded-full bg-[#1E3B5F] [box-shadow:0_0_8px_#1E3B5F]"></span>
+            <span class="text-[12.5px] font-bold tracking-[0.12em] text-[#7FB0FF] whitespace-nowrap">COMING 2H 2026</span>
           </div>
-          <p class="text-center text-sm text-muted-foreground m-0">
-            © 2026 AptusFIT Pte. Ltd. a Singapore Registered Company with Registration No. 202547602D
-          </p>
+          <h1 class="m-0 mb-[22px] font-black uppercase tracking-[-0.025em] leading-[0.94] text-[clamp(46px,6vw,88px)]">Training that <span class="text-[#1E3B5F]">adapts</span> to you.</h1>
+          <p class="m-0 mb-[34px] max-w-[520px] text-[clamp(17px,1.4vw,20px)] leading-relaxed text-[#A7ACB4] font-medium">A training system that adapts as you do. It uses your real workout data to adjust your plan over time — so you never have to rethink what to do next. No noise, no hype. Just steady, long-term progress.</p>
+
+          <a href={contactHref} class="inline-flex items-center gap-[10px] bg-[#1E3B5F] text-white font-bold text-[17px] px-[30px] py-4 rounded-full hover:bg-[#254875] transition-colors">
+            Get in touch
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <p class="mt-3.5 ml-0.5 text-[13.5px] text-[#6B7078] font-medium">In active development. Reach out and we&rsquo;ll keep you posted.</p>
+        </div>
+
+        <div class="relative flex justify-center min-w-0">
+          <div class="absolute top-[8%] w-[78%] h-[82%] rounded-full bg-[radial-gradient(circle,rgba(30,59,95,0.28),transparent_70%)] blur-[30px] pointer-events-none"></div>
+          <img src="/media/landing/screen-1.png" alt="AptusFIT home screen" class="relative w-full max-w-[340px] h-auto block [filter:drop-shadow(0_40px_80px_rgba(0,0,0,0.6))]" />
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ===== VALUE STRIP ===== -->
+    <section class="relative z-[1] max-w-[1200px] mx-auto px-8 pt-10 pb-5">
+      <div class="grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(240px,1fr))]">
+        {valueStrip.map((item) => (
+          <div class="p-[30px] rounded-[20px] bg-[#101217] border border-white/[0.06]">
+            <div class="inline-flex mb-[18px] w-[46px] h-[46px] items-center justify-center rounded-[13px] bg-[#1E3B5F]/[0.14]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d={item.icon} stroke="#1E3B5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="m-0 mb-2 text-xl font-extrabold tracking-[-0.01em]">{item.title}</h3>
+            <p class="m-0 text-[15.5px] leading-relaxed text-[#9BA0A8] font-medium">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== SPOTLIGHT 1: STRUCTURED PLANS ===== -->
+    <Spotlight
+      id="features"
+      eyebrow="Structured plans"
+      title="Plans that adapt to real life."
+      description="Swap days, adjust workouts, and keep training moving forward when your schedule changes. Push the whole week with a tap — your progression stays intact."
+      image="/media/landing/screen-2.png"
+      imageAlt="Structured plan calendar"
+    >
+      <ul class="list-none m-0 p-0 flex flex-col gap-3.5">
+        {["Long-press to swap any training day", "Push the schedule forward without losing progress", "Multi-week blocks that build on themselves"].map((line) => (
+          <li class="flex items-center gap-3 text-base font-semibold text-[#D3D6DB]">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="rgba(30,59,95,0.15)"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#1E3B5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            {line}
+          </li>
+        ))}
+      </ul>
+    </Spotlight>
+
+    <!-- ===== SPOTLIGHT 2: IN THE SESSION ===== -->
+    <Spotlight
+      bordered
+      reverse
+      eyebrow="In the session"
+      title="Built for real training sessions."
+      description="Track workouts set-by-set with rest timers, supersets, and RPE. Everything you need to execute cleanly — and nothing that gets in the way."
+      image="/media/landing/screen-3.png"
+      imageAlt="Live workout tracking"
+      glow="rgba(35,178,120,0.14)"
+    >
+      <div class="flex gap-7 flex-wrap">
+        <div><div class="text-[38px] font-black tracking-[-0.02em]">23</div><div class="text-[13px] font-bold tracking-[0.08em] text-[#7A7F87]">SETS / SESSION</div></div>
+        <div><div class="text-[38px] font-black tracking-[-0.02em]">1:30</div><div class="text-[13px] font-bold tracking-[0.08em] text-[#7A7F87]">SMART REST</div></div>
+        <div><div class="text-[38px] font-black tracking-[-0.02em] text-[#57D6A0]">Live</div><div class="text-[13px] font-bold tracking-[0.08em] text-[#7A7F87]">CALORIE TRACKING</div></div>
+      </div>
+    </Spotlight>
+
+    <!-- ===== SPOTLIGHT 3: AI COACH ===== -->
+    <Spotlight
+      eyebrow="AI Coach"
+      title="Coaching that works the way you train."
+      description="Ask for a workout, an adjustment, or guidance anytime. Your AI coach builds sessions around your equipment and goals, then stages them straight into your plan."
+      image="/media/landing/screen-5.png"
+      imageAlt="AI coach chat"
+    >
+      <div class="inline-flex items-center gap-3 px-5 py-3.5 rounded-2xl bg-[#14161C] border border-white/[0.08] text-[15.5px] font-semibold text-[#C7CAD0]">
+        <span class="text-[#7A7F87]">&ldquo;</span>Give me a quick hotel gym workout<span class="text-[#7A7F87]">&rdquo;</span>
+      </div>
+    </Spotlight>
+
+    <!-- ===== GRID: MORE ===== -->
+    <section class="relative z-[1] bg-[#0C0D11] border-t border-white/5">
+      <div class="max-w-[1200px] mx-auto px-8 py-24">
+        <div class="max-w-[640px] mb-14">
+          <span class="block text-[13px] font-extrabold tracking-[0.16em] text-[#1E3B5F] mb-[18px]">EVERYWHERE YOU TRAIN</span>
+          <h2 class="m-0 font-black uppercase tracking-[-0.02em] leading-[0.98] text-[clamp(30px,3.4vw,50px)]">The details that keep you adapting.</h2>
+        </div>
+        <div class="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))]">
+          {detailsGrid.map((card) => (
+            <div class="rounded-[22px] bg-[#101217] border border-white/[0.07] overflow-hidden flex flex-col">
+              <div class="px-[30px] pt-[30px]">
+                <h3 class="m-0 mb-2.5 text-[22px] font-extrabold tracking-[-0.01em]">{card.title}</h3>
+                <p class="m-0 text-[15.5px] leading-relaxed text-[#9BA0A8] font-medium">{card.description}</p>
+              </div>
+              <div class="mt-6 h-[240px] overflow-hidden flex justify-center items-start">
+                <img src={card.image} alt={card.alt} class="w-[82%] max-w-[260px] h-auto block [filter:drop-shadow(0_20px_40px_rgba(0,0,0,0.5))]" loading="lazy" />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section id="how" class="relative z-[1] max-w-[1200px] mx-auto px-8 py-[100px]">
+      <div class="text-center mb-[60px]">
+        <span class="block text-[13px] font-extrabold tracking-[0.16em] text-[#1E3B5F] mb-4">HOW IT WORKS</span>
+        <h2 class="m-0 font-black uppercase tracking-[-0.02em] leading-[0.98] text-[clamp(32px,3.6vw,54px)]">Three steps. Then it adapts.</h2>
+      </div>
+      <div class="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
+        {howItWorks.map((item) => (
+          <div class="p-[34px] rounded-[20px] bg-[#101217] border border-white/[0.06]">
+            <div class="text-[15px] font-black text-[#1E3B5F] tracking-[0.1em] mb-5">{item.step}</div>
+            <h3 class="m-0 mb-2.5 text-[21px] font-extrabold tracking-[-0.01em]">{item.title}</h3>
+            <p class="m-0 text-[15.5px] leading-relaxed text-[#9BA0A8] font-medium">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== CONTACT BAND ===== -->
+    <section id="contact" class="relative z-[1] px-8 pt-10 pb-[110px]">
+      <div class="max-w-[980px] mx-auto relative rounded-[30px] overflow-hidden [background:linear-gradient(135deg,#12213E_0%,#0B1220_60%)] border border-[#1E3B5F]/25 px-10 py-16 text-center">
+        <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[460px] h-[300px] bg-[radial-gradient(circle,rgba(30,59,95,0.35),transparent_70%)] blur-[30px] pointer-events-none"></div>
+        <div class="relative">
+          <span class="inline-block text-[13px] font-extrabold tracking-[0.16em] text-[#7FB0FF] mb-[18px]">PUBLIC RELEASE &mdash; 2H 2026</span>
+          <h2 class="m-0 mb-[18px] font-black uppercase tracking-[-0.02em] leading-[0.98] text-[clamp(32px,4.2vw,60px)]">Be first to train with AptusFIT.</h2>
+          <p class="mx-auto mb-[34px] max-w-[520px] text-lg leading-relaxed text-[#B7BCC4] font-medium">The platform is in active development. Get in touch and we&rsquo;ll reach out as soon as early access opens.</p>
+          <a href={contactHref} class="inline-flex items-center gap-2.5 bg-[#1E3B5F] text-white font-bold text-[17px] px-8 py-4 rounded-full hover:bg-[#254875] transition-colors">
+            Get in touch
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="relative z-[1] max-w-[820px] mx-auto px-8 pt-5 pb-[110px]">
+      <h2 class="m-0 mb-11 text-center font-black uppercase tracking-[-0.02em] leading-[0.98] text-[clamp(30px,3.4vw,48px)]">Questions, answered.</h2>
+      <div class="flex flex-col gap-3.5">
+        {faqs.map((item) => (
+          <div class="px-7 py-[26px] rounded-[18px] bg-[#101217] border border-white/[0.06]">
+            <h3 class="m-0 mb-2.5 text-lg font-extrabold">{item.q}</h3>
+            <p class="m-0 text-[15.5px] leading-relaxed text-[#9BA0A8] font-medium">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="relative z-[1] border-t border-white/[0.07] px-8 py-11">
+      <div class="max-w-[1200px] mx-auto flex flex-wrap gap-6 items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <img src="/media/landing/app-icon.png" alt="AptusFIT" class="w-7 h-7 rounded-lg block" />
+          <span class="font-extrabold text-[17px]"><span class="text-[#F4F5F7]">Aptus</span><span class="text-[#1E3B5F]">FIT</span></span>
+        </div>
+        <div class="flex gap-[26px] items-center">
+          <a href={contactHref} class="text-[#9BA0A8] font-semibold text-[14.5px] hover:text-[#F4F5F7] transition-colors">Contact</a>
+          <a href="/policy" class="text-[#9BA0A8] font-semibold text-[14.5px] hover:text-[#F4F5F7] transition-colors">Privacy Policy</a>
+          <a href="/terms" class="text-[#9BA0A8] font-semibold text-[14.5px] hover:text-[#F4F5F7] transition-colors">Terms of Service</a>
+        </div>
+      </div>
+      <div class="max-w-[1200px] mx-auto mt-7 text-[13px] text-[#62666E] font-medium">&copy; 2026 AptusFIT Pte. Ltd. &mdash; a Singapore registered company, Reg. No. 202547602D.</div>
     </footer>
+
   </div>
 </Base>
