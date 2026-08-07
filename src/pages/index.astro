@@ -3,6 +3,7 @@ import Base from "@/layouts/Base.astro";
 import Spotlight from "@/components/landing/Spotlight.astro";
 
 const contactHref = "mailto:contact@aptusfit.ai?subject=AptusFIT%20%E2%80%94%20Get%20in%20touch";
+const appStoreHref = "https://apps.apple.com/us/app/aptusfit/id6759816583";
 
 const valueStrip = [
   {
@@ -103,9 +104,9 @@ const faqs = [
         <a href="#features" class="text-[#9BA0A8] font-semibold text-[15px] hover:text-[#F4F5F7] transition-colors">Features</a>
         <a href="#how" class="text-[#9BA0A8] font-semibold text-[15px] hover:text-[#F4F5F7] transition-colors">How it works</a>
         <a href="#faq" class="text-[#9BA0A8] font-semibold text-[15px] hover:text-[#F4F5F7] transition-colors">FAQ</a>
-        <a href={contactHref} class="inline-flex items-center gap-2 bg-[#1E3B5F] text-white font-bold text-[15px] px-5 py-[11px] rounded-full hover:bg-[#254875] transition-colors">Get in touch</a>
+        <a href={appStoreHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#1E3B5F] text-white font-bold text-[15px] px-5 py-[11px] rounded-full hover:bg-[#254875] transition-colors">Download</a>
       </div>
-      <a href={contactHref} class="md:hidden inline-flex items-center gap-2 bg-[#1E3B5F] text-white font-bold text-sm px-4 py-2 rounded-full">Get in touch</a>
+      <a href={appStoreHref} target="_blank" rel="noopener noreferrer" class="md:hidden inline-flex items-center gap-2 bg-[#1E3B5F] text-white font-bold text-sm px-4 py-2 rounded-full">Download</a>
     </nav>
 
     <!-- ===== HERO ===== -->
