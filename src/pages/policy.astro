@@ -14,7 +14,7 @@ import Base from "@/layouts/Base.astro";
       </a>
 
       <h1 class="text-4xl font-bold text-foreground mb-2">Privacy Policy</h1>
-      <p class="text-sm text-muted-foreground mb-10">Last updated: May 18, 2026</p>
+      <p class="text-sm text-muted-foreground mb-10">Last updated: November 18, 2026</p>
 
       <div class="prose-content space-y-8 text-foreground">
 
@@ -22,6 +22,7 @@ import Base from "@/layouts/Base.astro";
           <h2 class="text-xl font-semibold mb-3">1. Introduction</h2>
           <p class="text-muted-foreground leading-relaxed">Welcome to AptusFIT.</p>
           <p class="text-muted-foreground leading-relaxed mt-3">This Privacy Policy explains how AptusFIT Pte. Ltd. ("AptusFIT", "we", "us", or "our") collects, uses, stores, shares, and protects your information when you use the AptusFIT mobile application, website, and related services available through <a href="https://www.aptusfit.ai" class="text-accent hover:text-accent/80 underline">www.aptusfit.ai</a> (collectively, the "Service").</p>
+          <p class="text-muted-foreground leading-relaxed mt-3">This Policy applies to the AptusFIT apps for iOS (distributed through the Apple App Store) and Android (distributed through Google Play), as well as our website.</p>
           <p class="text-muted-foreground leading-relaxed mt-3">AptusFIT is a Singapore-registered company (UEN: 202547602D).</p>
           <p class="text-muted-foreground leading-relaxed mt-3">By using the Service, you acknowledge that you have read and understood this Privacy Policy.</p>
         </section>
@@ -61,16 +62,29 @@ import Base from "@/layouts/Base.astro";
           </ul>
 
           <h3 class="text-base font-semibold mb-2 mt-4">D. Health & Wearable Data</h3>
-          <p class="text-muted-foreground leading-relaxed mb-2">If you choose to connect Apple HealthKit, Google Health Connect, or other supported wearable/device platforms, we may access certain health and activity information you authorize, including:</p>
+          <p class="text-muted-foreground leading-relaxed mb-3">Connecting a health platform is optional. AptusFIT only reads health data after you grant permission, and only the data types listed below. On Android, AptusFIT only reads from Health Connect and never writes to it. On iOS, with your permission, AptusFIT reads from Apple Health and saves your AptusFIT workouts (including calories, distance and, for outdoor workouts, the route) to Apple Health.</p>
+          <p class="text-muted-foreground leading-relaxed mb-2"><strong>Google Health Connect (Android).</strong> If you connect Health Connect, AptusFIT reads:</p>
+          <div class="overflow-x-auto mb-3">
+            <table class="w-full text-sm text-muted-foreground border-collapse">
+              <thead><tr><th class="text-left font-semibold text-foreground py-2 pr-4 align-top">Data type</th><th class="text-left font-semibold text-foreground py-2 pr-4 align-top">What we use it for</th></tr></thead>
+              <tbody>
+              <tr class="border-t border-border"><td class="py-2 pr-4 align-top">Heart rate</td><td class="py-2 pr-4 align-top">Showing your live and post-workout heart rate, and estimating the energy you burned in a session.</td></tr>
+              <tr class="border-t border-border"><td class="py-2 pr-4 align-top">Active calories burned</td><td class="py-2 pr-4 align-top">Showing how much energy each workout used, and tracking your training load over time.</td></tr>
+              <tr class="border-t border-border"><td class="py-2 pr-4 align-top">Total calories burned</td><td class="py-2 pr-4 align-top">Showing total energy for a session when active calories alone are not available from your device.</td></tr>
+              <tr class="border-t border-border"><td class="py-2 pr-4 align-top">Exercise sessions</td><td class="py-2 pr-4 align-top">Importing workouts recorded by your watch or other apps so that your training history and AI coaching recommendations reflect all of your training.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-muted-foreground leading-relaxed mb-3"><strong>Apple Health (iOS).</strong> If you connect Apple Health, AptusFIT reads workouts, heart rate, active energy burned, and resting (basal) energy burned, for the same purposes as listed above.</p>
+          <p class="text-muted-foreground leading-relaxed mb-2"><strong>How we treat health data.</strong></p>
           <ul class="list-disc pl-6 space-y-2 text-muted-foreground mb-3">
-            <li>Steps</li>
-            <li>Calories burned</li>
-            <li>Heart rate</li>
-            <li>Workout sessions</li>
-            <li>Activity duration and movement data</li>
+            <li>We use health data only to provide and improve the fitness features you see in the app. We do not use it for advertising, marketing, or data-broker purposes, and we do not sell it.</li>
+            <li>We do not share health data with third parties except as needed to provide the Service (for example, our cloud hosting provider), when required by law, or as part of a merger or acquisition subject to this Policy.</li>
+            <li>We do not allow humans to read health data unless you ask us to (for example, in a support request), it is needed for security or to comply with the law, or the data has been aggregated and anonymized.</li>
+            <li>We do not use health data to determine credit-worthiness or for lending purposes.</li>
           </ul>
-          <p class="text-muted-foreground leading-relaxed mb-2">Health and wearable integrations are always optional and permission-based. You may revoke access at any time through your device settings.</p>
-          <p class="text-muted-foreground leading-relaxed mb-4">We do not sell health or wearable data. We do not use health or wearable data obtained through Apple HealthKit, Google Health Connect, or similar platforms for advertising, marketing, or data-broker purposes.</p>
+          <p class="text-muted-foreground leading-relaxed mb-3"><strong>Health Connect Limited Use.</strong> AptusFIT's use of information received from Health Connect will adhere to the Health Connect Permissions policy, including the Limited Use requirements.</p>
+          <p class="text-muted-foreground leading-relaxed mb-4">You can revoke access at any time: on Android, open Health Connect → App permissions → AptusFIT; on iOS, open Settings → Health → Data Access & Devices → AptusFIT. Data already imported stays in your AptusFIT account until you delete it (see Section 7).</p>
 
           <h3 class="text-base font-semibold mb-2 mt-4">E. Device & Technical Information</h3>
           <p class="text-muted-foreground leading-relaxed mb-2">We may automatically collect:</p>
@@ -98,6 +112,29 @@ import Base from "@/layouts/Base.astro";
           <h3 class="text-base font-semibold mb-2 mt-4">G. Sensitive Personal Information</h3>
           <p class="text-muted-foreground leading-relaxed">Certain information you choose to provide — including injury information, wellness details, heart rate data, activity metrics, body measurements, and wearable data — may be considered sensitive personal information or sensitive personal data under applicable laws in certain jurisdictions.</p>
           <p class="text-muted-foreground leading-relaxed mt-3">We process such information only as necessary to provide and improve the Service, support fitness and wellness functionality, personalize recommendations, and operate authorized integrations.</p>
+          <h3 class="text-base font-semibold mb-2 mt-6">H. Location Data</h3>
+          <p class="text-muted-foreground leading-relaxed mb-3">AptusFIT uses your device's <strong>precise location</strong> (GPS) only for <strong>outdoor cardio workouts</strong> that you start yourself, such as an outdoor run, walk, or ride. Location is not used for strength workouts, indoor cardio, or any other part of the app.</p>
+          <p class="text-muted-foreground leading-relaxed mb-3"><strong>When we collect it.</strong> Only while an outdoor cardio workout is being tracked: from the moment you start it until you stop or finish it. During that time, location keeps being collected <strong>even if the app is in the background or your screen is off (background location)</strong>, so that your route and distance are still correct when you lock your phone mid-workout. On Android, a persistent notification ("Tracking your workout") stays visible the whole time location is being collected. Collection stops as soon as you pause, stop, or finish the workout. We never collect location when no outdoor workout is running.</p>
+          <p class="text-muted-foreground leading-relaxed mb-3"><strong>What we use it for.</strong> To calculate your route, distance, pace, speed, and elevation for that workout, and to show them during the workout and in your workout history.</p>
+          <p class="text-muted-foreground leading-relaxed mb-3">If you record an outdoor cardio workout with location enabled, the GPS route is stored with your workout history on your device and on our servers so it syncs across your devices, and, if you allow it, saved to Apple Health. Routes are not used for analytics or advertising and are not sent to our AI coach provider.</p>
+          <p class="text-muted-foreground leading-relaxed mb-3"><strong>What we do not do.</strong> We do not sell your location. We do not use it for advertising or marketing, share it with advertisers or data brokers, track where you go outside a workout, or send your route to the AI coach. (The coach may see summary numbers such as distance and pace, never your route.)</p>
+          <p class="text-muted-foreground leading-relaxed mb-3"><strong>Before we ask.</strong> Before the system permission prompt appears, the app shows a screen that explains what location is collected, why, and that it continues in the background during a workout. You can decline. If you decline, you can still log outdoor cardio manually, but the app will not record your route, distance, or pace automatically.</p>
+          <p class="text-muted-foreground leading-relaxed mb-4"><strong>Retention and deletion.</strong> Your workout route is stored as part of that workout's record. It is kept until you delete the workout or your account. You can delete a single workout in the app, or request deletion of your account and all associated data at <a href="mailto:Contact@AptusFIT.ai" class="text-accent hover:text-accent/80 underline">Contact@AptusFIT.ai</a> (see Section 7). You can turn off location access at any time in your device settings.</p>
+          <h3 class="text-base font-semibold mb-2 mt-4">I. Device Permissions</h3>
+          <p class="text-muted-foreground leading-relaxed mb-2">AptusFIT asks for the following permissions. Each one is optional, and you can change it at any time in your device settings.</p>
+          <div class="overflow-x-auto mb-3">
+            <table class="w-full text-sm text-muted-foreground border-collapse">
+              <thead><tr><th class="text-left font-semibold text-foreground py-2 pr-4 align-top">Permission</th><th class="text-left font-semibold text-foreground py-2 pr-4 align-top">Why we ask</th></tr></thead>
+              <tbody>
+              <tr class="border-t border-border"><td class="py-2 pr-4 align-top">Precise location (while using the app)</td><td class="py-2 pr-4 align-top">To record route, distance, and pace during outdoor cardio.</td></tr>
+              <tr class="border-t border-border"><td class="py-2 pr-4 align-top">Background location ("Allow all the time" on Android, "Always" on iOS)</td><td class="py-2 pr-4 align-top">To keep recording an outdoor cardio workout when the screen is locked or the app is in the background.</td></tr>
+              <tr class="border-t border-border"><td class="py-2 pr-4 align-top">Notifications</td><td class="py-2 pr-4 align-top">Rest-timer and workout reminders, and on Android the "Tracking your workout" notification shown while an outdoor workout is being recorded.</td></tr>
+              <tr class="border-t border-border"><td class="py-2 pr-4 align-top">Health data (Health Connect / Apple Health)</td><td class="py-2 pr-4 align-top">See Section 2.D.</td></tr>
+              <tr class="border-t border-border"><td class="py-2 pr-4 align-top">Photos</td><td class="py-2 pr-4 align-top">Only if you choose to set a profile picture.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-muted-foreground leading-relaxed">The app does not record audio or use your microphone.</p>
         </section>
 
         <section>
@@ -108,6 +145,8 @@ import Base from "@/layouts/Base.astro";
             <li>Generate and personalize workout plans, recommendations, and AI-powered coaching experiences</li>
             <li>Adapt workouts and training suggestions based on your preferences, goals, and activity history</li>
             <li>Sync and display wearable and health-related activity data</li>
+            <li>Record route, distance, pace, and elevation during outdoor cardio workouts you start, using location (see Section 2.H)</li>
+            <li>Send notifications you have allowed, such as timer alerts, reminders, and the workout-in-progress notification on Android</li>
             <li>Respond to support requests and customer inquiries</li>
             <li>Send service-related notifications, reminders, updates, and account communications</li>
             <li>Monitor app reliability, security, fraud prevention, and abuse detection</li>
@@ -129,7 +168,9 @@ import Base from "@/layouts/Base.astro";
 
         <section>
           <h2 class="text-xl font-semibold mb-3">5. How We Share Information</h2>
-          <p class="text-muted-foreground leading-relaxed mb-4">We do not sell your personal information.</p>
+                    <p class="text-muted-foreground leading-relaxed mb-3">We do not sell your personal information.</p>
+          <p class="text-muted-foreground leading-relaxed mb-3">We never sell, rent, or share your location data or health data with advertisers, ad networks, or data brokers, and we never use them for advertising.</p>
+          <p class="text-muted-foreground leading-relaxed mb-4">When you use the AI coach, relevant workout and health metrics (for example heart rate, calories, distance and pace) are sent to our AI providers (Anthropic or OpenAI) solely to generate your coaching response. They are not used for advertising. Your location and GPS routes are not sent.</p>
           <p class="text-muted-foreground leading-relaxed mb-3">We may share information in the following circumstances:</p>
 
           <h3 class="text-base font-semibold mb-2 mt-4">A. Service Providers</h3>
@@ -180,6 +221,8 @@ import Base from "@/layouts/Base.astro";
           </ul>
           <p class="text-muted-foreground leading-relaxed mb-3">You may request deletion of your account and associated personal information by contacting us at <a href="mailto:Contact@AptusFIT.ai" class="text-accent hover:text-accent/80 underline">Contact@AptusFIT.ai</a>.</p>
           <p class="text-muted-foreground leading-relaxed mb-3">We will process deletion requests within a reasonable timeframe, generally within 30 days unless a longer retention period is required by law or legitimate operational necessity.</p>
+          <p class="text-muted-foreground leading-relaxed mb-3"><strong>Location and health data.</strong> Workout routes and imported health data are kept as part of your workout history until you delete the workout, disconnect and delete the imported data, or delete your account. When you delete your account, we delete this data together with the rest of your account data, under the timeline above.</p>
+          <p class="text-muted-foreground leading-relaxed mb-3">When you delete your account, your workout history, GPS routes, imported health data, AI coach conversations and usage data are permanently deleted from our servers. We keep only the records we are legally required to keep, such as App Store / Google Play purchase receipts (which contain store transaction IDs, not your name or email), promo-code redemptions, and a record that you accepted our policies, with personal identifiers removed.</p>
           <p class="text-muted-foreground leading-relaxed mb-2">Please note that:</p>
           <ul class="list-disc pl-6 space-y-2 text-muted-foreground">
             <li>Certain backups, logs, and archived copies may temporarily persist after deletion</li>
@@ -214,6 +257,12 @@ import Base from "@/layouts/Base.astro";
             <li>Withdrawing consent where processing is consent-based</li>
           </ul>
           <p class="text-muted-foreground leading-relaxed mb-3">Please note that withdrawing consent for certain data processing activities may limit or disable some features of the Service, including AI personalization, workout recommendations, wearable integrations, reminders, or account functionality.</p>
+          <p class="text-muted-foreground leading-relaxed mb-2"><strong>Managing permissions.</strong> You can withdraw location, notification, or health access at any time:</p>
+          <ul class="list-disc pl-6 space-y-2 text-muted-foreground mb-3">
+            <li><strong>Android:</strong> Settings → Apps → AptusFIT → Permissions (location, notifications), and Health Connect → App permissions → AptusFIT.</li>
+            <li><strong>iOS:</strong> Settings → AptusFIT (location, notifications), and Settings → Health → Data Access & Devices → AptusFIT.</li>
+          </ul>
+          <p class="text-muted-foreground leading-relaxed mb-3">Withdrawing a permission stops new collection right away. It does not delete data that was already collected. To delete that data, see Section 7.</p>
           <p class="text-muted-foreground leading-relaxed">To exercise these rights, contact us at <a href="mailto:Contact@AptusFIT.ai" class="text-accent hover:text-accent/80 underline">Contact@AptusFIT.ai</a>. We may need to verify your identity before processing certain requests.</p>
         </section>
 
