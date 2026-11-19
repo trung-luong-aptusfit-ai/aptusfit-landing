@@ -1,0 +1,27 @@
+# AptusFIT
+
+> AptusFIT is an AI workout coach and planner for iPhone and Apple Watch. It builds gym training plans around the user's equipment, goals, and schedule, tracks every set, and adapts the plan from real workout data. Made by AptusFIT Pte. Ltd. (Singapore).
+
+## Key facts
+
+- Platforms: iPhone (iOS 15.1+) and Apple Watch (watchOS 10+). Android is not available yet.
+- Price: free to download; AptusFIT Premium includes a 30-day free trial. Prices vary by region.
+- Category: Health & Fitness.
+- Languages: English, French, German, Indonesian, Japanese, Korean, Malay, Simplified Chinese, Spanish, Thai, Traditional Chinese, Vietnamese.
+
+## What it does
+
+- AI coach: ask for a workout or an adjustment at any time; the coach builds sessions around your equipment and goals and adds them to your plan.
+- Adaptive plans: multi-week plans that recalibrate from completed sessions, loads, and reps.
+- Gym profiles: commercial, home, and hotel gyms; workouts and exercise swaps match the equipment available.
+- Exercise library: 600+ exercises with injury-aware filtering.
+- Tracking: set-by-set logging with rest timers, progress history, and trend charts.
+- Integrations: Apple Health and an Apple Watch app.
+
+## Links
+
+- [Website](https://www.aptusfit.ai/)
+- [Download on the App Store](https://apps.apple.com/us/app/aptusfit/id6759816583)
+- [Privacy policy](https://www.aptusfit.ai/policy)
+- [Terms of use](https://www.aptusfit.ai/terms)
+- Contact: contact@aptusfit.ai
