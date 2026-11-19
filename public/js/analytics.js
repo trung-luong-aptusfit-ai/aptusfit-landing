@@ -30,6 +30,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const target = e.target.closest("a");
     if (!target) return;
 
+    // Track App Store download clicks (the main conversion on this site)
+    if (target.href && target.href.includes("apps.apple.com")) {
+      gtag("event", "app_store_click", {
+        landing_page: window.location.pathname.replace("/", "") || "homepage",
+        button_text: target.textContent.trim(),
+        link_url: target.href,
+      });
+    }
+
     // Track Chrome extension install clicks
     if (target.href && target.href.includes("chrome.google.com/webstore")) {
       const landingPage =
