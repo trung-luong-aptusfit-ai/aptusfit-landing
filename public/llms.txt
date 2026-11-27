@@ -5,7 +5,7 @@
 ## Key facts
 
 - Platforms: iPhone (iOS 15.1+) and Apple Watch (watchOS 10+). Android is not available yet.
-- Price: free to download; AptusFIT Premium includes a 30-day free trial. Prices vary by region.
+- Price: free to download; AptusFIT Premium starts with a free trial. Prices vary by region.
 - Category: Health & Fitness.
 - Languages: English, French, German, Indonesian, Japanese, Korean, Malay, Simplified Chinese, Spanish, Thai, Traditional Chinese, Vietnamese.
 
